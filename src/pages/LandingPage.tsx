@@ -42,7 +42,7 @@ const LandingPage = () => {
                     <span className="block text-blue-600">compliance deadline</span>
                   </h1>
                   <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                    CompliMate helps business owners, freelancers, and small teams manage their compliance-related deadlines such as GST filings, license renewals, website expirations, tax payments, and more.
+                    CompliMate helps business owners, freelancers, and small teams manage their compliance-related deadlines such as tax filings, regulatory submissions, license renewals, website expirations, and more.
                   </p>
                   <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                     <div className="rounded-md shadow">
@@ -190,7 +190,7 @@ const LandingPage = () => {
                         <svg className="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-sm text-gray-500">WhatsApp alerts</span>
+                        <span className="text-sm text-gray-500">SMS/WhatsApp alerts</span>
                       </li>
                       <li className="flex space-x-3">
                         <svg className="flex-shrink-0 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
