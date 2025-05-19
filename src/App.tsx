@@ -8,8 +8,8 @@ import { ClerkLoaded, ClerkLoading } from "@clerk/clerk-react";
 
 // Pages
 import LandingPage from "./pages/LandingPage";
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
+import LoginPage from "./pages/Login";
+import SignUpPage from "./pages/SignUp";
 import Dashboard from "./pages/Dashboard";
 import Reminders from "./pages/Reminders";
 import NewReminder from "./pages/NewReminder";
@@ -40,8 +40,8 @@ const App = () => (
           <Routes>
             {/* Public routes */}
             <Route path="/" element={<LandingPage />} />
-            <Route path="/login/*" element={<Login />} />
-            <Route path="/signup/*" element={<SignUp />} />
+            <Route path="/login/*" element={<LoginPage />} />
+            <Route path="/signup/*" element={<SignUpPage />} />
             
             {/* Protected routes - wrapped with AppLayout */}
             <Route element={<AppLayout />}>
