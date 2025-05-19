@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { SignedIn, SignedOut } from '@clerk/clerk-react';
+import { ArrowRight } from 'lucide-react';
 
 const LandingPage = () => {
   return (
@@ -31,45 +32,80 @@ const LandingPage = () => {
       </header>
       
       <main>
-        {/* Hero section */}
-        <div className="relative bg-white overflow-hidden">
-          <div className="max-w-7xl mx-auto">
-            <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-              <div className="pt-10 mx-auto max-w-7xl px-4 sm:pt-12 sm:px-6 md:pt-16 lg:pt-20 lg:px-8 xl:pt-28">
-                <div className="sm:text-center lg:text-left">
-                  <h1 className="text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl">
-                    <span className="block">Never miss a</span>
-                    <span className="block text-blue-600">compliance deadline</span>
-                  </h1>
-                  <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                    CompliMate helps business owners, freelancers, and small teams manage their compliance-related deadlines such as tax filings, regulatory submissions, license renewals, website expirations, and more.
-                  </p>
-                  <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                    <div className="rounded-md shadow">
-                      <Link to="/signup">
-                        <Button size="lg" className="w-full">
-                          Get started
-                        </Button>
-                      </Link>
-                    </div>
-                    <div className="mt-3 sm:mt-0 sm:ml-3">
-                      <Link to="/login">
-                        <Button variant="outline" size="lg" className="w-full">
-                          Log in
-                        </Button>
-                      </Link>
-                    </div>
+        {/* Redesigned Hero section with floating elements */}
+        <div className="relative bg-gradient-to-br from-blue-50 to-indigo-100 overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute animate-pulse opacity-30 blur-3xl bg-blue-300 rounded-full h-56 w-56 -left-20 -top-20"></div>
+            <div className="absolute animate-pulse delay-700 opacity-20 blur-3xl bg-indigo-400 rounded-full h-72 w-72 right-10 top-40"></div>
+            <div className="absolute animate-pulse delay-1000 opacity-20 blur-3xl bg-blue-200 rounded-full h-64 w-64 left-1/3 bottom-0"></div>
+            <div className="absolute animate-pulse delay-500 opacity-30 blur-3xl bg-cyan-200 rounded-full h-40 w-40 left-1/4 top-20"></div>
+            <div className="absolute animate-pulse delay-300 opacity-30 blur-3xl bg-indigo-200 rounded-full h-24 w-24 right-1/4 top-10"></div>
+          </div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div className="grid md:grid-cols-2 gap-12 items-center py-20 md:py-28">
+              <div className="space-y-8">
+                <div className="space-y-2">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 animate-bounce">
+                    Never miss deadlines again
                   </div>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+                    <span className="block">Stay ahead with</span>
+                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">smart compliance</span>
+                  </h1>
+                </div>
+                
+                <p className="text-lg md:text-xl text-gray-600">
+                  CompliMate helps business owners, freelancers, and small teams manage their compliance-related deadlines such as tax filings, regulatory submissions, license renewals, website expirations, and more.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to="/signup">
+                    <Button size="lg" className="group w-full sm:w-auto relative overflow-hidden transition-all">
+                      <span className="relative z-10">Get started for free</span>
+                      <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                  <Link to="/login">
+                    <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                      Log in
+                    </Button>
+                  </Link>
+                </div>
+                
+                <div className="flex items-center gap-4">
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3, 4].map((i) => (
+                      <div key={i} className={`w-8 h-8 rounded-full border-2 border-white bg-blue-${i*100} flex items-center justify-center text-xs text-white font-medium`}>
+                        {i}
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-sm text-gray-600">
+                    Trusted by <span className="font-semibold">thousands</span> of businesses worldwide
+                  </p>
+                </div>
+              </div>
+              
+              <div className="relative order-first md:order-last">
+                <div className="relative z-10 bg-white rounded-lg shadow-xl p-2 border border-gray-100 transform md:rotate-2 hover:rotate-0 transition-transform duration-300">
+                  <img
+                    src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80"
+                    alt="Calendar and planning"
+                    className="rounded w-full h-auto object-cover"
+                  />
+                </div>
+                
+                <div className="absolute -bottom-10 -left-10 z-0">
+                  <div className="w-20 h-20 bg-blue-500 rounded-lg animate-float opacity-20"></div>
+                </div>
+                
+                <div className="absolute -top-5 -right-5 z-0">
+                  <div className="w-14 h-14 bg-indigo-500 rounded-full animate-float-delayed opacity-30"></div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 hidden lg:block">
-            <img
-              className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-              src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80"
-              alt="Calendar and planning"
-            />
           </div>
         </div>
         
