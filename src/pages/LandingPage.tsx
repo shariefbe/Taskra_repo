@@ -11,7 +11,7 @@ const LandingPage = () => {
       <header className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
-            <h1 className="text-xl font-bold text-blue-700">CompliMate</h1>
+            <h1 className="text-xl font-bold text-blue-700">Taskra</h1>
             <div className="flex items-center gap-4">
               <SignedIn>
                 <Link to="/dashboard">
@@ -56,7 +56,7 @@ const LandingPage = () => {
                 </div>
                 
                 <p className="text-lg md:text-xl text-gray-600">
-                  CompliMate helps business owners, freelancers, and small teams manage their compliance-related deadlines such as tax filings, regulatory submissions, license renewals, website expirations, and more.
+                  Taskra helps business owners, freelancers, and small teams manage their compliance-related deadlines such as tax filings, regulatory submissions, license renewals, website expirations, and more.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -118,7 +118,7 @@ const LandingPage = () => {
                 Stay compliant, save time
               </p>
               <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                CompliMate helps you manage all your compliance deadlines in one place.
+                Taskra helps you manage all your compliance deadlines in one place.
               </p>
             </div>
 
@@ -289,7 +289,7 @@ const LandingPage = () => {
       
       <footer className="bg-gray-800">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-400">© 2025 CompliMate. All rights reserved.</p>
+          <p className="text-center text-gray-400">© 2025 Taskra. All rights reserved.</p>
         </div>
       </footer>
     </div>

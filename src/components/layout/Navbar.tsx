@@ -8,7 +8,7 @@ const Navbar = () => {
     <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
       <div className="px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
         <div className="flex items-center">
-          <h1 className="text-xl font-bold text-blue-700">CompliMate</h1>
+          <h1 className="text-xl font-bold text-blue-700">Taskra</h1>
         </div>
         <div className="flex items-center gap-4">
           <button className="relative p-2 rounded-full hover:bg-gray-100">
