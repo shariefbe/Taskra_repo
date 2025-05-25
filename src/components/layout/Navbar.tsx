@@ -15,18 +15,20 @@ import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
+    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
         <div className="flex items-center space-x-8">
           <Link to="/">
             <h1 className="text-xl font-bold text-blue-700">Taskra</h1>
           </Link>
           
-          <NavigationMenu>
-            <NavigationMenuList>
+          <NavigationMenu className="z-50">
+            <NavigationMenuList className="flex space-x-1">
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent">Features</NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuTrigger className="bg-transparent hover:bg-gray-100 data-[state=open]:bg-gray-100">
+                  Features
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="z-50 bg-white shadow-lg border border-gray-200">
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     <ListItem href="/#features" title="Smart Reminders">
                       Get notified before deadlines with customizable alert timings.
@@ -45,8 +47,10 @@ const Navbar = () => {
               </NavigationMenuItem>
               
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent">Pricing</NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuTrigger className="bg-transparent hover:bg-gray-100 data-[state=open]:bg-gray-100">
+                  Pricing
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="z-50 bg-white shadow-lg border border-gray-200">
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-3 lg:w-[600px]">
                     <ListItem href="/#pricing" title="Free">
                       Perfect for individuals just getting started.
@@ -63,7 +67,7 @@ const Navbar = () => {
               
               <NavigationMenuItem>
                 <Link to="/dashboard" className={cn(
-                  "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
+                  "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
                 )}>
                   Dashboard
                 </Link>
