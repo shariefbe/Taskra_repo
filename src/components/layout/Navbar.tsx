@@ -3,12 +3,6 @@ import React from 'react';
 import { UserButton } from '@clerk/clerk-react';
 import { Bell, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   return (
@@ -19,77 +13,61 @@ const Navbar = () => {
             <h1 className="text-xl font-bold text-blue-700">Taskra</h1>
           </Link>
           
-          {/* Navigation Menu - Force Visible */}
-          <nav className="flex items-center space-x-1">
-            {/* Features Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors border-0 bg-transparent focus:outline-none">
+          {/* Navigation Menu - Always Visible */}
+          <nav className="flex items-center space-x-1 relative">
+            {/* Features Dropdown - Always Open */}
+            <div className="relative">
+              <button className="flex items-center space-x-1 px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors border-0 bg-transparent focus:outline-none">
                 Features
                 <ChevronDown className="h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent 
-                className="w-64 z-[9999] bg-white shadow-xl border border-gray-200 rounded-md mt-1"
-                sideOffset={4}
-                align="start"
-              >
-                <DropdownMenuItem asChild className="focus:bg-gray-50">
-                  <a href="/#features" className="flex flex-col items-start p-4 w-full">
+              </button>
+              {/* Force dropdown to be always visible */}
+              <div className="absolute top-full left-0 mt-1 w-64 bg-white shadow-xl border-2 border-red-500 rounded-md z-[9999] block">
+                <div className="p-1">
+                  <a href="/#features" className="flex flex-col items-start p-4 w-full hover:bg-gray-50 rounded-md">
                     <div className="font-medium text-gray-900">Smart Reminders</div>
                     <div className="text-sm text-gray-500 mt-1">Get notified before deadlines with customizable alert timings.</div>
                   </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild className="focus:bg-gray-50">
-                  <a href="/#features" className="flex flex-col items-start p-4 w-full">
+                  <a href="/#features" className="flex flex-col items-start p-4 w-full hover:bg-gray-50 rounded-md">
                     <div className="font-medium text-gray-900">Team Collaboration</div>
                     <div className="text-sm text-gray-500 mt-1">Invite team members and assign compliance tasks.</div>
                   </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild className="focus:bg-gray-50">
-                  <a href="/#features" className="flex flex-col items-start p-4 w-full">
+                  <a href="/#features" className="flex flex-col items-start p-4 w-full hover:bg-gray-50 rounded-md">
                     <div className="font-medium text-gray-900">Document Storage</div>
                     <div className="text-sm text-gray-500 mt-1">Upload and store compliance documents securely.</div>
                   </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild className="focus:bg-gray-50">
-                  <a href="/#features" className="flex flex-col items-start p-4 w-full">
+                  <a href="/#features" className="flex flex-col items-start p-4 w-full hover:bg-gray-50 rounded-md">
                     <div className="font-medium text-gray-900">All Features</div>
                     <div className="text-sm text-gray-500 mt-1">Explore all the features Taskra has to offer.</div>
                   </a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                </div>
+              </div>
+            </div>
 
-            {/* Pricing Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors border-0 bg-transparent focus:outline-none">
+            {/* Pricing Dropdown - Always Open */}
+            <div className="relative">
+              <button className="flex items-center space-x-1 px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors border-0 bg-transparent focus:outline-none">
                 Pricing
                 <ChevronDown className="h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent 
-                className="w-64 z-[9999] bg-white shadow-xl border border-gray-200 rounded-md mt-1"
-                sideOffset={4}
-                align="start"
-              >
-                <DropdownMenuItem asChild className="focus:bg-gray-50">
-                  <a href="/#pricing" className="flex flex-col items-start p-4 w-full">
+              </button>
+              {/* Force dropdown to be always visible */}
+              <div className="absolute top-full left-0 mt-1 w-64 bg-white shadow-xl border-2 border-red-500 rounded-md z-[9999] block">
+                <div className="p-1">
+                  <a href="/#pricing" className="flex flex-col items-start p-4 w-full hover:bg-gray-50 rounded-md">
                     <div className="font-medium text-gray-900">Free</div>
                     <div className="text-sm text-gray-500 mt-1">Perfect for individuals just getting started.</div>
                   </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild className="focus:bg-gray-50">
-                  <a href="/#pricing" className="flex flex-col items-start p-4 w-full">
+                  <a href="/#pricing" className="flex flex-col items-start p-4 w-full hover:bg-gray-50 rounded-md">
                     <div className="font-medium text-gray-900">Pro</div>
                     <div className="text-sm text-gray-500 mt-1">For small businesses and teams.</div>
                   </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild className="focus:bg-gray-50">
-                  <a href="/#pricing" className="flex flex-col items-start p-4 w-full">
+                  <a href="/#pricing" className="flex flex-col items-start p-4 w-full hover:bg-gray-50 rounded-md">
                     <div className="font-medium text-gray-900">Consultant</div>
                     <div className="text-sm text-gray-500 mt-1">For professionals managing multiple clients.</div>
                   </a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                </div>
+              </div>
+            </div>
 
             {/* Dashboard Link */}
             <Link 
