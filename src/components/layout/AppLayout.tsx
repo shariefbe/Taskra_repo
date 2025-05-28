@@ -9,11 +9,11 @@ const AppLayout = () => {
   return (
     <>
       <SignedIn>
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gray-50" style={{ overflow: 'visible' }}>
           <Navbar />
-          <div className="flex">
+          <div className="flex" style={{ overflow: 'visible' }}>
             <Sidebar />
-            <main className="flex-1 p-6">
+            <main className="flex-1 p-6" style={{ overflow: 'visible' }}>
               <Outlet />
             </main>
           </div>
